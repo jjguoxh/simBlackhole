@@ -264,7 +264,6 @@ class GLBlackHoleWidget(QOpenGLWidget):
         self.radius = max(1.5e10, min(self.radius * factor, 1e12))
         self.update()
 
-
 def main():
     fmt = QSurfaceFormat()
     fmt.setVersion(4, 3)
