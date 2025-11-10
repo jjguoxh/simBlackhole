@@ -112,8 +112,8 @@ class GLBlackHoleWidget(QOpenGLWidget):
 
     def initializeGL(self):
         # Compile compute shader
-        root = Path(__file__).resolve().parents[1]
-        shader_path = root / 'geodesic.comp'
+        # 修复文件路径：geodesic.comp 与当前文件在同一目录中
+        shader_path = Path(__file__).resolve().parent / 'geodesic.comp'
         with open(shader_path, 'r', encoding='utf-8') as f:
             comp_src = f.read()
         comp = _compile_shader(comp_src, GL_COMPUTE_SHADER)
